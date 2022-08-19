@@ -1,0 +1,13 @@
+gh
+node
+nvm
+wget
+intellij-idea		
+iterm2			
+pycharm			
+visual-studio-code	
+openjdk@17
+flycut
+docker
+postman
+atom
