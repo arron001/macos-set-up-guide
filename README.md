@@ -149,29 +149,33 @@ I haven't found the domain & key for these yet
   - Tip you can find the packages installed on your old machine by running `brew list`
 - [ ] Install all by running `brew install $(cat ~/Downloads/Brew\ Packages.txt)`
 - [ ] After all installs are complete, review terminal logs for any additional package specific set-up 
+- [ ] Add shortcuts to switch Java versions
+  - Make sure you have Java 17 & 21 installed.
+  - Add the following to your .zshrc
+```
+alias j17="export JAVA_HOME=`/usr/libexec/java_home -v 17`; java -version"
+alias j21="export JAVA_HOME=`/usr/libexec/java_home -v 21`; java -version"
+```
+Then switch with `j17` or `j21`
+
+``` 
+➜  ~ j17
+openjdk version "17.0.9" 2023-10-17
+OpenJDK Runtime Environment Homebrew (build 17.0.9+0)
+OpenJDK 64-Bit Server VM Homebrew (build 17.0.9+0, mixed mode, sharing)
+➜  ~ j21
+openjdk version "21.0.1" 2023-10-17
+OpenJDK Runtime Environment Homebrew (build 21.0.1)
+OpenJDK 64-Bit Server VM Homebrew (build 21.0.1, mixed mode, sharing)
+```
 
 ---
 
 ## Set Git Credentials
 - [ ] `git config --global user.email "{git account email address}"`
 - [ ] `git config --global user.name "Your Name"`
-- [ ] Set Atom as you custom editor for Git
-  - `git config --global core.editor "/Applications/Atom.app/Contents/Resources/app/atom.sh -n -w"`
-- [ ] Add these aliases to your <~/.gitconfig> file
-```
-[alias]
-      st = status
-      ci = commit
-      br = branch
-      co = checkout
-      df = diff
-      dt = difftool
-      dr = !sh -c 'ref="$(git symbolic-ref --short HEAD)" && git df origin/$ref..$ref'
-      dc = diff --cached
-      lol = log --graph --decorate --pretty=oneline --abbrev-commit
-      lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-      ls = ls-files
-```
+
+- [ ] Set-up SSH keys
         
 ## Set-up Terminal
 - [ ] Install oh my zsh - https://ohmyz.sh/#install
